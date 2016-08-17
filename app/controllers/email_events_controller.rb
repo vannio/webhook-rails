@@ -1,0 +1,2 @@
+class EmailEventsController < ApplicationController
+end
