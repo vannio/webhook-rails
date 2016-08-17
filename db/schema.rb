@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160817071338) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "address"
-    t.string   "type"
+    t.string   "category"
     t.string   "event"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
