@@ -1,6 +1,8 @@
 class EmailsController < ApplicationController
+	skip_before_action  :verify_authenticity_token
+
 	def create
-		p request.body.read
-		# p JSON.parse(req)
+		p JSON.parse(request.body.read)
+		render inline: 'Webhook captured'
 	end
 end
