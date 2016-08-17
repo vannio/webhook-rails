@@ -1,6 +1,6 @@
 feature 'Summary stats' do
 	scenario 'should display a stats table' do
-		visit('/email_events')
+		visit('/emails')
 		within_table('summary') do
 			expect(page).to have_content('Total number of emails sent')
 			expect(page).to have_content('Total number of emails opened')
