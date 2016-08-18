@@ -18,7 +18,7 @@
         <% @email_types.each do |type| %>
         <li>
           <strong><%= type %>:</strong>
-          <%= Email.calculate_rate(type, 'open') %>
+          <%= percentage_rate(type, 'open') %>
         </li>
         <% end %>
       </ul>
@@ -31,7 +31,7 @@
         <% @email_types.each do |type| %>
         <li>
           <strong><%= type %>:</strong>
-          <%= Email.calculate_rate(type, 'click') %>
+          <%= percentage_rate(type, 'click') %>
         </li>
         <% end %>
       </ul>

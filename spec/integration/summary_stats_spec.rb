@@ -1,6 +1,8 @@
 feature 'Summary stats' do
   before do
     visit('/emails')
+    @open_rate_cell = find('td', text: 'Open rate per email type').find('+td')
+    @click_rate_cell = find('td', text: 'Click rate per email type').find('+td')
   end
 
   scenario 'should display a stats table' do
@@ -23,18 +25,22 @@ feature 'Summary stats' do
     ]
 
     within_table('summary') do
-      open_rate_cell = find('td', text: 'Open rate per email type').find('+td')
-      click_rate_cell = find('td', text: 'Click rate per email type').find('+td')
-
-      within(open_rate_cell) do
+      within(@open_rate_cell) do
         expect(page).to have_css('ul')
         expect(page).to have_css("li:nth-child(#{EMAIL_TYPES.length})")
       end
 
-      within(click_rate_cell) do
+      within(@click_rate_cell) do
         expect(page).to have_css('ul')
         expect(page).to have_css("li:nth-child(#{EMAIL_TYPES.length})")
       end
+    end
+  end
+
+  scenario 'should display rates as a percentage' do
+    within_table('summary') do
+      expect(@open_rate_cell).to have_content('%')
+      expect(@click_rate_cell).to have_content('%')
     end
   end
 end
