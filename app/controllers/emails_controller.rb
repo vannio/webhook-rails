@@ -1,19 +1,20 @@
 class EmailsController < ApplicationController
-	skip_before_action  :verify_authenticity_token
+  skip_before_action  :verify_authenticity_token
 
-	def create
-		unless(request.body.read.empty?)
-			data = JSON.parse(request.body.read)
-			params = {
-				address: data['Address'],
-				category: data['EmailType'],
-				event: data['Event']
-			}
+  def create
+    body = request.body.read
+    unless(body.empty?)
+      data = JSON.parse(body)
+      params = {
+        address: data['Address'],
+        category: data['EmailType'],
+        event: data['Event']
+      }
 
-			Email.create(params)
-			render inline: 'Webhook captured'
-		else
-			raise 'Error capturing webhook'
-		end
-	end
+      Email.create(params)
+      render inline: 'Webhook captured'
+    else
+      raise 'Error capturing webhook'
+    end
+  end
 end
