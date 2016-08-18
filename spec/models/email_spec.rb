@@ -1,12 +1,12 @@
 describe Email, :type => :model do
   let(:example_emails) {[
-    { address:"barney@lostmy.name", category: "Shipment", event:"send" },
-    { address:"tom@lostmy.name", category: "UserConfirmation", event:"click" },
-    { address:"jacob@lostmy.name", category: "Order", event:"open" },
-    { address:"rehat@lostmy.name", category: "Shipment", event:"send" },
-    { address:"callum@lostmy.name", category: "ReferAFriend", event:"send" },
-    { address:"simon@lostmy.name", category: "Shipment", event:"send" },
-    { address:"josh@lostmy.name", category: "UserConfirmation", event:"open" }
+    { address:"barney@lostmy.name", email_type: "Shipment", event:"send" },
+    { address:"tom@lostmy.name", email_type: "UserConfirmation", event:"click" },
+    { address:"jacob@lostmy.name", email_type: "Order", event:"open" },
+    { address:"rehat@lostmy.name", email_type: "Shipment", event:"send" },
+    { address:"callum@lostmy.name", email_type: "ReferAFriend", event:"send" },
+    { address:"simon@lostmy.name", email_type: "Shipment", event:"send" },
+    { address:"josh@lostmy.name", email_type: "UserConfirmation", event:"open" }
   ]}
 
   before do

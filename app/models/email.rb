@@ -1,5 +1,5 @@
 class Email < ApplicationRecord
-	validates :address, :category, :event, :presence => true
+	validates :address, :email_type, :event, :presence => true
 
   TYPES = [
     "Order",
@@ -9,9 +9,9 @@ class Email < ApplicationRecord
     "GetABookDiscount",
   ].freeze
 
-  def self.calculate_rate(category, event)
-    total = self.where(category: category).count
-    event = self.where(event: event, category: category).count
+  def self.calculate_rate(email_type, event)
+    total = self.where(email_type: email_type).count
+    event = self.where(event: event, email_type: email_type).count
 
     percentage = (event.to_f / total.to_f) * 100
     percentage.nan? ? 0 : percentage

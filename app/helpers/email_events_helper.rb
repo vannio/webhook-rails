@@ -3,8 +3,8 @@ module EmailEventsHelper
     Email.where(event: event).count
   end
 
-  def percentage_rate(category, event)
-    num = Email.calculate_rate(category, event)
+  def percentage_rate(type, event)
+    num = Email.calculate_rate(type, event)
     sprintf('%20.2g%', num)
   end
 end

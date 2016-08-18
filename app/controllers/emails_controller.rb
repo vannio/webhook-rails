@@ -11,7 +11,7 @@ class EmailsController < ApplicationController
       data = JSON.parse(body)
       params = {
         address: data['Address'],
-        category: data['EmailType'],
+        email_type: data['EmailType'],
         event: data['Event']
       }
 
