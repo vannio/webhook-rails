@@ -1,0 +1,34 @@
+feature 'Summary stats' do
+  let(:example_emails) {[
+    { address:"barney@lostmy.name", category: "Shipment", event:"send" },
+    { address:"tom@lostmy.name", category: "UserConfirmation", event:"click" },
+    { address:"jacob@lostmy.name", category: "Order", event:"open" },
+    { address:"rehat@lostmy.name", category: "Shipment", event:"send" },
+    { address:"callum@lostmy.name", category: "ReferAFriend", event:"send" },
+    { address:"simon@lostmy.name", category: "Shipment", event:"send" },
+    { address:"josh@lostmy.name", category: "UserConfirmation", event:"open" }
+  ]}
+
+  before do
+    example_emails.each do |email|
+      Email.create(email)
+    end
+  end
+
+	scenario 'should display a stats table' do
+		visit('/emails')
+		within_table('summary') do
+			expect(page).to have_content('Total number of emails sent')
+			expect(page).to have_content('Total number of emails opened')
+			expect(page).to have_content('Total number of clicks')
+			expect(page).to have_content('Open rate per email type')
+			expect(page).to have_content('Click rate per email type')
+		end
+	end
+
+  scenario 'should display correct total sent emails' do
+    visit('/emails')
+    sent_cell = find('td', text: 'Total number of emails sent').find('+td')
+    expect(sent_cell).to have_content(4)
+  end
+end
