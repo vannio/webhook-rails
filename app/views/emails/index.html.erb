@@ -13,10 +13,28 @@
 	</tr>
 	<tr>
 		<td>Open rate per email type</td>
-		<td>0</td>
+		<td>
+      <ul>
+        <% @email_types.each do |type| %>
+        <li>
+          <strong><%= type %>:</strong>
+          <%= Email.calculate_rate(type, 'open') %>
+        </li>
+        <% end %>
+      </ul>
+    </td>
 	</tr>
 	<tr>
 		<td>Click rate per email type</td>
-		<td>0</td>
+		<td>
+      <ul>
+        <% @email_types.each do |type| %>
+        <li>
+          <strong><%= type %>:</strong>
+          <%= Email.calculate_rate(type, 'click') %>
+        </li>
+        <% end %>
+      </ul>
+    </td>
 	</tr>
 </table>
