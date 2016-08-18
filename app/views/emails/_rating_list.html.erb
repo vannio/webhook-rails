@@ -1,0 +1,8 @@
+<ul>
+  <% @email_types.each do |type| %>
+  <li>
+    <strong><%= type %>:</strong>
+    <%= percentage_rate(type, event) %>
+  </li>
+  <% end %>
+</ul>
