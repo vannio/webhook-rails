@@ -1,16 +1,8 @@
 class EmailsController < ApplicationController
   skip_before_action  :verify_authenticity_token
-  EMAIL_TYPES = [
-    "Order",
-    "UserConfirmation",
-    "Shipment",
-    "ReferAFriend",
-    "GetABookDiscount"
-  ].freeze
-
 
   def index
-    @email_types = EMAIL_TYPES
+    @email_types = Email::TYPES
   end
 
   def create

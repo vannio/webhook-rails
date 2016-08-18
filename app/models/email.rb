@@ -1,6 +1,14 @@
 class Email < ApplicationRecord
 	validates :address, :category, :event, :presence => true
 
+  TYPES = [
+    "Order",
+    "UserConfirmation",
+    "Shipment",
+    "ReferAFriend",
+    "GetABookDiscount",
+  ].freeze
+
   def self.calculate_rate(category, event)
     total = self.where(category: category).count
     event = self.where(event: event, category: category).count

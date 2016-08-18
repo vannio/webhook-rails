@@ -16,23 +16,15 @@ feature 'Summary stats' do
 	end
 
   scenario 'should display rates in an unordered list' do
-    EMAIL_TYPES = [
-      "Order",
-  		"UserConfirmation",
-  		"Shipment",
-  		"ReferAFriend",
-  		"GetABookDiscount"
-    ]
-
     within_table('summary') do
       within(@open_rate_cell) do
         expect(page).to have_css('ul')
-        expect(page).to have_css("li:nth-child(#{EMAIL_TYPES.length})")
+        expect(page).to have_css("li:nth-child(#{Email::TYPES.length})")
       end
 
       within(@click_rate_cell) do
         expect(page).to have_css('ul')
-        expect(page).to have_css("li:nth-child(#{EMAIL_TYPES.length})")
+        expect(page).to have_css("li:nth-child(#{Email::TYPES.length})")
       end
     end
   end
