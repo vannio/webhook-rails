@@ -1,18 +1,6 @@
 feature 'Summary totals' do
-  let(:example_emails) {[
-    { address:"barney@lostmy.name", email_type: "Shipment", event:"send" },
-    { address:"tom@lostmy.name", email_type: "UserConfirmation", event:"click" },
-    { address:"jacob@lostmy.name", email_type: "Order", event:"open" },
-    { address:"rehat@lostmy.name", email_type: "Shipment", event:"send" },
-    { address:"callum@lostmy.name", email_type: "ReferAFriend", event:"send" },
-    { address:"simon@lostmy.name", email_type: "Shipment", event:"send" },
-    { address:"josh@lostmy.name", email_type: "UserConfirmation", event:"open" }
-  ]}
-
   before do
-    example_emails.each do |email|
-      Email.create(email)
-    end
+    post_dummy_emails
   end
 
   scenario 'should display correct total number of sent emails' do
