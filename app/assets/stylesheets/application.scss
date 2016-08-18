@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+header {
+  background-color: #01b69b;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &::after {
+      content: 'name';
+    }
+
+    &:hover::after {
+      content: 'emails';
+    }
+  }
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
