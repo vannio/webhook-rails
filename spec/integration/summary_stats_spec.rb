@@ -1,6 +1,6 @@
 feature 'Summary stats' do
   before do
-    visit('/emails')
+    visit('/')
     @open_rate_cell = find('td', text: 'Open rate per email type').find('+td')
     @click_rate_cell = find('td', text: 'Click rate per email type').find('+td')
   end
