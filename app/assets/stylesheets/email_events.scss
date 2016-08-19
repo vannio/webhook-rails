@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.summary {
+.totals {
+  margin: 2rem auto;
+
   &__cell {
     vertical-align: top;
+    text-align: left;
 
     &--title {
       text-align: right;
@@ -13,10 +16,11 @@
   }
 }
 
-.rating {
-  &__cell {
-    &--title {
-      padding-right: 3rem;
-    }
+.rates {
+  margin: 2rem auto;
+  &__header,
+  &__cell--title {
+    padding-right: 1rem;
+    text-align: right;
   }
 }
