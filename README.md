@@ -1,5 +1,5 @@
 # Webhook Rails
-[Getting Started](#getting-started) | [Notes](#notes)
+[Intro](#webhook-rails) | [Getting Started](#getting-started) | [Notes](#notes)
 
 Initial set up of the ~~mandrill.go~~ `llirdnam.go` application was a bit tricky because I hadn't ever touched/seen Go code before! I also had little idea what webhooks were, so it was doubly unfamiliar. However I managed to get through those hurdles just fine, and this is my working prototype :smile:
 &nbsp;
