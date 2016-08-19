@@ -17,7 +17,7 @@ Initial set up of the ~~mandrill.go~~ `llirdnam.go` application was a bit tricky
 - [homebrew](http://brew.sh/)
 - [ruby](https://www.ruby-lang.org/en/)
 
-#### Installation
+#### Installation (OS X)
 1. Install and configure postgresql if you haven't already:
 
   `brew install postgresql`
