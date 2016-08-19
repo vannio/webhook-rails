@@ -60,10 +60,10 @@ _Why not use the default, SQLite?_<br>
 Postgres is generally what I've been taught to use - it is tried and tested, and I know how to use it! SQLite is just fine, but I've had issues in the past trying to deploy a Rails app to Heroku because of it.
 
 #### Class methods on Email model
-It just didn't make sense to encapsulate `#calculate_rate` in a `Calculator` class for example, because it's only ever used on data from the `Email` model.
+It just didn't make sense to encapsulate `#calculate_rate` in a `Calculator` class for example, because the method is only ever used on data from the `Email` model.
 
-#### Column titles
-Initially, my table column names were: address, type, event. It turns out that `type` is a restricted word and I couldn't use it as a column name. I mistakenly thought it was a good idea to change it to `category` instead, but it got very confusing because the incoming webhook data was called `EmailType`. In the end, I created a migration to rename the column to `email_type`.
+#### Column names
+Initially, my table column names were: `address`, `type`, `event`. It turns out that `type` is a restricted word and I couldn't use it as a column name. I mistakenly thought it was a good idea to change it to `category` instead, but it got very confusing because the corresponding webhook data was called `EmailType`. In the end, I created a migration to rename the column to `email_type`.
 
 #### Timestamp webhook data
 Rails automatically adds a `created_at` column. After having a look at the `llirdnam.go` generator, I noticed that it generates a timestamp which is the current time anyway, so I chose not to use the posted timestamp to avoid data duplication.
