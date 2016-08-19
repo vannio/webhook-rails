@@ -69,4 +69,4 @@ Initially, my table column names were: `address`, `type`, `event`. It turns out 
 Rails automatically adds a `created_at` column. After having a look at the `llirdnam.go` generator, I noticed that it generates a timestamp which is the current time anyway, so I chose not to use the posted timestamp to avoid data duplication.
 
 #### UI
-As much as table layouts remind me of 90s web design, there are instances in which they are necessary — displaying data for example! I identified 2 separate sets of data and split them into tables accordingly. Other than making it readable, I haven't really done anything further styling because it wasn't a requirement.
+As much as table layouts remind me of 90s web design, there are instances in which they are necessary — displaying data for example! I identified 2 separate sets of data and split them into tables accordingly. Other than making it readable, I haven't really done any further styling because it wasn't a requirement.
