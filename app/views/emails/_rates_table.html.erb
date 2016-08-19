@@ -1,0 +1,15 @@
+<table class="rates" id="rates">
+  <tr class="rates_row">
+    <th class="rates__header">Email type</th>
+    <th class="rates__header">Click rate</th>
+    <th class="rates__header">Open rate</th>
+  </tr>
+  </tr>
+  <% @email_types.each do |type| %>
+  <tr class="rates__row">
+    <td class="rates__cell rates__cell--title"><%= type %></td>
+    <td class="rates__cell"><%= percentage_rate(type, 'click') %></td>
+    <td class="rates__cell"><%= percentage_rate(type, 'open') %></td>
+  </tr>
+  <% end %>
+</table>

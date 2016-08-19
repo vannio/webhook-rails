@@ -1,8 +1,0 @@
-<table class="rating">
-  <% @email_types.each do |type| %>
-  <tr class="rating__row">
-    <td class="rating__cell rating__cell--title"><%= type %></td>
-    <td class="rating__cell"><%= percentage_rate(type, event) %></td>
-  </tr>
-  <% end %>
-</table>

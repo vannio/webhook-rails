@@ -4,6 +4,14 @@ feature 'Summary totals' do
     visit('/')
   end
 
+  scenario 'should display a totals in a table' do
+    within_table('totals') do
+      expect(page).to have_content('Total number of emails sent')
+      expect(page).to have_content('Total number of emails opened')
+      expect(page).to have_content('Total number of clicks')
+    end
+  end
+
   scenario 'should display correct total number of sent emails' do
     sent_cell = find('td', text: 'Total number of emails sent').find('+td')
     expect(sent_cell).to have_content(4)

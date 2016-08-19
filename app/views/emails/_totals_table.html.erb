@@ -1,0 +1,25 @@
+<table class="totals" id="totals">
+	<tr class="totals__row">
+		<td class="totals__cell totals__cell--title">
+      Total number of emails <strong>sent</strong></td>
+		<td class="totals__cell">
+      <%= count_event('send') %>
+    </td>
+	</tr>
+	<tr class="totals__row">
+		<td class="totals__cell totals__cell--title">
+      Total number of emails <strong>opened</strong>
+    </td>
+		<td class="totals__cell">
+      <%= count_event('open') %>
+    </td>
+	</tr>
+	<tr class="totals__row">
+		<td class="totals__cell totals__cell--title">
+      Total number of <strong>clicks</strong>
+    </td>
+		<td class="totals__cell">
+      <%= count_event('click') %>
+    </td>
+	</tr>
+</table>
