@@ -16,6 +16,7 @@ class EmailsController < ApplicationController
       }
 
       Email.create(params)
+      ActionCable.server.broadcast('emails', message: 'update_counts')
       render inline: 'Webhook captured'
     else
       raise 'Error capturing webhook'
