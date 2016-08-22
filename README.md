@@ -70,3 +70,8 @@ Rails automatically adds a `created_at` column. After having a look at the `llir
 
 #### UI
 As much as table layouts remind me of 90s web design, there are instances in which they are necessary — displaying data for example! I identified 2 separate sets of data and split them into tables accordingly. Other than making it readable, I haven't really done any further styling because it wasn't a requirement.
+
+
+&nbsp;
+### Bonus
+This isn't strictly part of the test, but I thought I'd use this opportunity to have a play with WebSockets. If you'd like to see, checkout the `action-cable` branch. The tables of data reload when triggered by the incoming webhook.
