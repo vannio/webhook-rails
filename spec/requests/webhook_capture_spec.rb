@@ -22,6 +22,23 @@ describe 'Webhook capture' do
     end
   end
 
+  context 'with incorrectly formatted email address' do
+    let(:example_params) {
+      {
+        "Address":"barney@lostmy",
+        "EmailType":"Shipment",
+        "Event":"send",
+        "Timestamp":1432820696
+      }
+    }
+
+    it 'should not add entry to database' do
+      expect{
+        post('/emails', params: example_params, as: :json)
+      }.to_not change{ Email.all.count }
+    end
+  end
+
   context 'with gibberish webhook data' do
     let(:example_params) {
       {

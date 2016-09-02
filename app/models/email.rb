@@ -1,5 +1,6 @@
 class Email < ApplicationRecord
 	validates :address, :email_type, :event, :presence => true
+  validates :address, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   TYPES = [
     "Order",
